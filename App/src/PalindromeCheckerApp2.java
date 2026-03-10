@@ -1,35 +1,28 @@
-import java.util.Scanner;
-import java.util.LinkedList;
+/*
+Main class - PalindromeAPP
+Use case 1 : Printing the application as Entry Message
 
-class UseCase8PalindromeCheckerApp {
+Description:
+  This class represents the entry point of the Palindrome Checker Management System.
 
+  At this stage, the application:
+   - Starts education from the main() method
+   - Displays a welcome message
+   - Shows application version
+
+   No palindrome logic is implemented yet.
+
+   The goal is to establish a clear startup flow.
+
+   @author Kevin
+   @version 1.0
+ */
+
+
+public class PalindromeCheckerApp2 {
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Input : ");
-        String input = sc.nextLine();
-
-        // Create a LinkedList to store characters
-        LinkedList<Character> list = new LinkedList<>();
-
-        // Add each character to the LinkedList
-        for (char c : input.toCharArray()) {
-            list.add(c);
-        }
-
-        boolean isPalindrome = true;
-
-        // Compare until only one or zero elements remain
-        while (list.size() > 1) {
-            if (list.removeFirst() != list.removeLast()) {
-                isPalindrome = false;
-                break;
-            }
-        }
-
-        System.out.println("Is Palindrome? : " + isPalindrome);
-
-        sc.close();
+        System.out.println("Welcome to the Palindrome Checker Management System");
+        System.out.println("Version : 1.0");
+        System.out.println("System initialized Successfully.");
     }
 }
