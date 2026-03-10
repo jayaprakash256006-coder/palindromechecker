@@ -1,25 +1,22 @@
 import java.util.Scanner;
-import java.util.Stack;
 
 public class PalindromeCheckerApp {
 
-    public static boolean check(String input) {
+    public static boolean checkPalindrome(String input) {
 
-        Stack<Character> stack = new Stack<>();
+        String reversed = "";
 
-        // Push characters to stack
-        for (char c : input.toCharArray()) {
-            stack.push(c);
+        // Reverse the string
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed = reversed + input.charAt(i);
         }
 
-        // Compare with original string
-        for (char c : input.toCharArray()) {
-            if (c != stack.pop()) {
-                return false;
-            }
+        // Compare original and reversed
+        if (input.equalsIgnoreCase(reversed)) {
+            return true;
+        } else {
+            return false;
         }
-
-        return true;
     }
 
     public static void main(String[] args) {
@@ -29,7 +26,7 @@ public class PalindromeCheckerApp {
         System.out.print("Input: ");
         String input = sc.nextLine();
 
-        boolean result = check(input);
+        boolean result = checkPalindrome(input);
 
         System.out.println("Is Palindrome? " + result);
 
